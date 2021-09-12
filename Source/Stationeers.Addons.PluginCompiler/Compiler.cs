@@ -103,6 +103,9 @@ namespace Stationeers.Addons.PluginCompiler
                 .WithReferences(references.ToArray())
                 .WithOptions(options);
 
+            // Warmup whitelist
+            PluginWhitelist.Initialize(compilation);
+            
             CompilationWithAnalyzers compilationWithAnalyzers = null;
             
             // Create compilation with additional analyzers for non-trusted code
